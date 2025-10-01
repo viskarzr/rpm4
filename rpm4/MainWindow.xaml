@@ -7,6 +7,36 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Menu VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <MenuItem Header="Файл">
+                <MenuItem x:Name="miExit" Header="Выход" ToolTip="Это кнопка выхода" Click="btnExit_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Справка">
+                <MenuItem x:Name="miAbout" Header="О программе" ToolTip="Это кнопка расскажет о программе и её создателе" Click="btnAbout_Click">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Команды">
+                <MenuItem x:Name="miFull" Header="Заполнить" ToolTip="Данная кнопка заполняет таблицу рандомными значениями"  ></MenuItem>
+                <MenuItem x:Name="miCalc" Header="Вычислить" ToolTip="Эта кнопка воспроизводит расчёт по заданию"  ></MenuItem>
+                <MenuItem x:Name="miCleanAll" Header="Очистить все поля программы" ToolTip="Эта кнопка очищает все поля программы" ></MenuItem>
+            </MenuItem>
+        </Menu>
+        <GroupBox Grid.Column="1" Header="GroupBox" Margin="0,20,0,0">
+            <StackPanel Margin="0,10,0,0"/>
+        </GroupBox>
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="btnAbout" Content="О программе" HorizontalAlignment="Center" Margin="10,10,10,10" Click="btnAbout_Click"/>
+            <Button x:Name="btnExit" Content="Выход" HorizontalAlignment="Center" Margin="10,10,10,10" Click="btnExit_Click"/>
+        </StackPanel>
+        <Canvas Grid.ColumnSpan="2"/>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
     </Grid>
 </Window>
