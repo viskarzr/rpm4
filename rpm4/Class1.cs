@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace rpm4
 {
-    internal class Class1
+     class Triangle
     {
+        //стороны треугольника
+        private double _a;
+        private double _b;
+        private double _c;
+
     }
 }
