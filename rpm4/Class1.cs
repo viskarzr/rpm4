@@ -7,9 +7,11 @@ using System.Windows;
 
 namespace rpm4
 {
+    /// <summary>
+    /// класс Triangle для расчёта периметра с применением полями-сторонами и увеличением полей в два раза
+    /// </summary>
     public class Triangle
-    {
-        //стороны треугольника
+    {    
         private double _a;
         private double _b;
         private double _c;
@@ -45,7 +47,7 @@ namespace rpm4
                 }
             }
         }
-        public Triangle() // проверить на необходимость
+        public Triangle()
         {
             _a = 1;
             _b = 1;
