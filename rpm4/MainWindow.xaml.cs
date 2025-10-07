@@ -58,7 +58,7 @@ namespace rpm4
             tri.SetParams();
             OutPut();
         }
-
+ 
         private void btnSet_Click(object sender, RoutedEventArgs e)
         {
             bool f1, f2, f3;
