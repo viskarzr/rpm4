@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 
 namespace rpm4
-{
+{ 
     /// <summary>
     /// класс Triangle для расчёта периметра с применением полями-сторонами и увеличением полей в два раза
     /// </summary>
@@ -15,6 +15,7 @@ namespace rpm4
         private double _a;
         private double _b;
         private double _c;
+
         public double a
         {
             get { return _a; }
@@ -48,6 +49,7 @@ namespace rpm4
             }
         }
         public Triangle()
+
         {
             _a = 1;
             _b = 1;
