@@ -26,22 +26,18 @@ namespace rpm4
 
         private void btnAbout_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Практическая работа №4\r\nРабота с классами. Перегрузка методов.Создать класс Triangle (треугольник) с полями-сторонами.\r\n Создать необходимые методы и свойства. Определить метод вычисления периметра.\r\n Создать перегруженные методы SetParams, для установки параметров объекта,\r\n в том числе увеличения размеров треугольника в 2 раза.\r\nВыполнила:\r\nСтудентка гр.ИСП-31\r\nКирюшова Виктория");
+            MessageBox.Show("Практическая работа №5-6\r\nОпределение операций в классе.Использовать класс Triangle (треугольник) с полями-сторонами. Разработать\r\nоперацию для определения возможности существование треугольника с заданными \r\nсторонами true/false. Разработать операции для увеличения/уменьшения сторон на \r\n1.\r\nВыполнила:\r\nСтудентка гр.ИСП-31\r\nКирюшова Виктория");
         }
 
         private void btnPer_Click(object sender, RoutedEventArgs e)
         {
-            bool f1, f2, f3;
-            f1 = Double.TryParse(tbASide.Text, out double a);
-            f2 = Double.TryParse(tbBSide.Text, out double b);
-            f3 = Double.TryParse(tbCSide.Text, out double c);
-            if (f1 == true && f2 == true && f3 == true)
+            if (tri)
             {
                 tbPer.Text = tri.GetPerimeter().ToString();
             }
             else
             {
-                MessageBox.Show("Введите корректные значения!");
+                MessageBox.Show("Данный треугольник не существует. И расчёт периметра не возможен!");
             }
         }
 
@@ -68,7 +64,6 @@ namespace rpm4
             if (f1 == true && f2 == true && f3 == true)
             {
                 tri.SetParams(a, b, c);
-                OutPut();
             }
         }
         private void OutPut()
@@ -76,6 +71,18 @@ namespace rpm4
             tbASide.Text = tri.a.ToString();
             tbBSide.Text = tri.b.ToString();
             tbCSide.Text = tri.c.ToString();
+        }
+
+        private void btnPlus_Click(object sender, RoutedEventArgs e)
+        {
+            tri++;
+            OutPut();
+        }
+
+        private void btnMinus_Click(object sender, RoutedEventArgs e)
+        {
+            tri--;
+            OutPut();
         }
     }
 }

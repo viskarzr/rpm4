@@ -88,7 +88,7 @@ namespace rpm4
         /// <param name="b"></param>
         /// <param name="c"></param>
         /// <returns></returns>
-        private bool TrueTriandle(double a, double b, double c)
+        public bool TrueTriandle(double a, double b, double c)
         {
             return a > 0 && b > 0 && c > 0 && a + b > c && b + c > a && a + c > b;
         }
@@ -115,6 +115,7 @@ namespace rpm4
         /// <returns></returns>
         public double GetPerimeter()
         {
+
             return _a + _b + _c;
         }
 
@@ -126,6 +127,52 @@ namespace rpm4
             _a *= 2;
             _b *= 2;
             _c *= 2;
-        }        
+        }
+
+        /// <summary>
+        /// Перегруженный оператор true для проверки треугольника на существование
+        /// </summary>
+        /// <param name="tri"> экземпляр класса - треугольник </param>
+        /// <returns></returns>
+        public static bool operator true(Triangle tri)
+        {
+            return tri.TrueTriandle(tri._a, tri._b, tri._c);
+        }
+
+        /// <summary>
+        /// Перегруженный оператор false для проверки треугольника на существование
+        /// </summary>
+        /// <param name="tri"> экземпляр класса - треугольник </param>
+        /// <returns></returns>
+        public static bool operator false(Triangle tri)
+        {
+            return !tri.TrueTriandle(tri._a, tri._b, tri._c);
+        }
+
+        /// <summary>
+        /// Перегруженный оператора для увеличения сторон треугольника на 1
+        /// </summary>
+        /// <param name="tri"></param>
+        /// <returns></returns>
+        public static Triangle operator ++(Triangle tri)
+        {
+            tri._a += 1;
+            tri._b += 1;
+            tri._c += 1;
+            return tri;
+        }
+
+        /// <summary>
+        /// Перегруженный оператора для уменьшения сторон треугольника на 1
+        /// </summary>
+        /// <param name="tri"></param>
+        /// <returns></returns>
+        public static Triangle operator --(Triangle tri)
+        {
+            tri._a -= 1;
+            tri._b -= 1;
+            tri._c -= 1;
+            return tri;
+        }
     }
 }
