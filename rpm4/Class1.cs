@@ -186,10 +186,14 @@ namespace rpm4
             get {  return _area; }
         }
 
-        //public Equilateral()
-        //{
-        //    //CalcArea();
-        //}
+        public Equilateral()
+        {
+        }
+
+        public Equilateral(double a, double b, double c) : base(a, b, c)
+        {
+        }
+
 
         //public double CalcArea()
         //{
