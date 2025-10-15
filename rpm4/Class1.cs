@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -174,5 +175,25 @@ namespace rpm4
             tri._c -= 1;
             return tri;
         }
+    }
+
+    class Equilateral:Triangle
+    {
+        private double _area;
+
+        public double Area
+        {
+            get {  return _area; }
+        }
+
+       public Equilateral()
+        {
+            //CalcArea();
+        }
+
+        //public double CalcArea()
+        //{
+
+        //}
     }
 }
