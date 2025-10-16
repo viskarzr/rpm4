@@ -186,18 +186,35 @@ namespace rpm4
             get {  return _area; }
         }
 
-        public Equilateral()
+        public Equilateral(): base()
         {
         }
 
-        public Equilateral(double a, double b, double c) : base(a, b, c)
+        public Equilateral(double side) : base(a,b,c)
         {
         }
 
+        //    public double SetParams(double side)
+        //    {
+        //        if (side > 0)
+        //        {
+        //            _a = side;
+        //            _b = side;
+        //            _c = side;
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Стороны треугольника должны быть больше нуля");
+        //        }
+        //    }
 
-        //public double CalcArea()
-        //{
+        //    public double CalcArea()
+        //    {
+        //        double p;
+        //        p = (side * 3) / 2;
+        //        _area = Math.Sqrt(p * (p - side) * (p - side) * (p - side));
+        //        return _area;
 
-        //}
+        //    }
     }
 }
