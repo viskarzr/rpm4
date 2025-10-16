@@ -19,6 +19,7 @@ namespace rpm4
             OutPut();
         }
         Triangle tri = new Triangle();
+        Equilateral equi = new Equilateral();
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -83,6 +84,27 @@ namespace rpm4
         {
             tri--;
             OutPut();
+        }
+
+        private void btnEquilateral_Click(object sender, RoutedEventArgs e)
+        {
+            bool f1, f2, f3;
+            f1 = Double.TryParse(tbASide.Text, out double a);
+            f2 = Double.TryParse(tbBSide.Text, out double b);
+            f3 = Double.TryParse(tbCSide.Text, out double c);
+            if (f1 == true && f2 == true && f3 == true)
+            {
+                if (a == b && b == c)
+                {
+                    equi.SetParams(a, b, c);
+                    tbArea.Text = equi.CalcArea().ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Треугольник не равносторонний");
+                }
+            }
+
         }
     }
 }

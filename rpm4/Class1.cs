@@ -186,35 +186,40 @@ namespace rpm4
             get {  return _area; }
         }
 
-        public Equilateral(): base()
+        public Equilateral(): base(1,1,1)
         {
         }
 
-        public Equilateral(double side) : base(a,b,c)
+        public Equilateral(double side) : base(side, side, side)
         {
         }
 
-        //    public double SetParams(double side)
-        //    {
-        //        if (side > 0)
-        //        {
-        //            _a = side;
-        //            _b = side;
-        //            _c = side;
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Стороны треугольника должны быть больше нуля");
-        //        }
-        //    }
+        public void SetParams(double side)
+        {
+            if (side <= 0)
+            {
+                throw new ArgumentException("Сторона треугольника должна быть больше нуля");
+            }
+            base.SetParams(side, side, side);
+        }
 
-        //    public double CalcArea()
-        //    {
-        //        double p;
-        //        p = (side * 3) / 2;
-        //        _area = Math.Sqrt(p * (p - side) * (p - side) * (p - side));
-        //        return _area;
+        public double side
+        {
+            get { return a; } // Все стороны равны, поэтому возвращаем любую
+            set
+            {
+                if (value <= 0) MessageBox.Show("Стороны должны быть больше нуля");
+                    
+                SetParams(value);
+            }
+        }
+        public double CalcArea()
+        {
+            double p;
+            p = (side * 3) / 2;
+            _area = Math.Sqrt(p * (p - side) * (p - side) * (p - side));
+            return _area;
 
-        //    }
+        }
     }
 }

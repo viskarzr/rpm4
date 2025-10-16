@@ -49,7 +49,7 @@
                 <Button x:Name="btnMinus" Content="Уменьшить" Width="200" Click="btnMinus_Click"/>
                 <GroupBox Height="120" Header=" Равносторонний треугольник " Margin="0,10,0,0">
                     <StackPanel>
-                        <Button x:Name="btnEquilateral" Content="Проверка на равносторонность" Margin="0,10,0,0"  Width="200"/>
+                        <Button x:Name="btnEquilateral" Content="Проверка на равносторонность" Margin="0,10,0,0"  Width="200" Click="btnEquilateral_Click"/>
                         <Label Content="Площадь равн. треугольника"/>
                         <TextBox x:Name="tbArea" TextWrapping="Wrap"  Width="200" Margin="0,10,0,0" IsReadOnly="True"/>
                     </StackPanel>
