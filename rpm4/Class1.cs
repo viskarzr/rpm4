@@ -172,7 +172,11 @@ namespace rpm4
             tri._a -= 1;
             tri._b -= 1;
             tri._c -= 1;
-           ч
+            if (tri._a == 0 && tri._b == 0 && tri._c == 0)
+            {
+                MessageBox.Show("Стороны не могут быть меньше нуля");
+            }
+            return tri;
         }
     }
 }
