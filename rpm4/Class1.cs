@@ -170,10 +170,13 @@ namespace rpm4
         /// <returns></returns>
         public static Triangle operator --(Triangle tri)
         {
-            tri._a -= 1;
-            tri._b -= 1;
-            tri._c -= 1;
-            if (tri._a == 0 && tri._b == 0 && tri._c == 0)
+            if (tri._a > 1 && tri._b > 1 && tri._c > 1)
+            {
+                tri._a -= 1;
+                tri._b -= 1;
+                tri._c -= 1;
+            }
+            else
             {
                 MessageBox.Show("Стороны не могут быть меньше нуля");
             }

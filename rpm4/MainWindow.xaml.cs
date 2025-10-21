@@ -18,18 +18,29 @@ namespace rpm4
             InitializeComponent();
             OutPut();
         }
+        /// <summary>
+        /// Создание экземпляров
+        /// </summary>
         Triangle tri = new Triangle();
         Equilateral equi = new Equilateral();
+
+        /// <summary>
+        /// кнопка выходв
+        /// </summary>
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// кнопка о программе
+        /// </summary>
         private void btnAbout_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Практическая работа №5\r\nОпределение операций в классе.Использовать класс Triangle (треугольник) с полями-сторонами.\r\n Разработать операцию для определения возможности существование треугольника с заданными \r\nсторонами true/false. Разработать операции для увеличения/уменьшения сторон на 1.\r\nВыполнила:\r\nСтудентка гр.ИСП-31\r\nКирюшова Виктория");
+            MessageBox.Show("Практическая работа №6\r\nНаследование. Иерархия классов.\r\nИспользовать класс Triangle (треугольник) с полями-сторонами. \r\nСоздать производный класс Equilateral (равносторонний), имеющий поле площади. \r\nОпределить метод вычисления площади.\r\nВыполнила:\r\nСтудентка гр.ИСП-31\r\nКирюшова Виктория");
         }
-
+        /// <summary>
+        /// кнопка расчета периметра
+        /// </summary>
         private void btnPer_Click(object sender, RoutedEventArgs e)
         {
             if (tri)
@@ -41,7 +52,9 @@ namespace rpm4
                 MessageBox.Show("Данный треугольник не существует. И расчёт периметра не возможен!");
             }
         }
-
+        /// <summary>
+        /// кнопка очищения
+        /// </summary>
         private void miCleanAll_Click(object sender, RoutedEventArgs e)
         {
             tbPer.Clear();
@@ -50,12 +63,18 @@ namespace rpm4
             tbCSide.Clear();
         }
 
+        /// <summary>
+        /// кнопка для увеличения сторон в 2 раза
+        /// </summary>
         private void btnDouble_Click(object sender, RoutedEventArgs e)
         {
             tri.SetParams();
             OutPut();
         }
- 
+
+        /// <summary>
+        /// кнопка для установки сторон треугольника
+        /// </summary>
         private void btnSet_Click(object sender, RoutedEventArgs e)
         {
             bool f1, f2, f3;
@@ -74,18 +93,26 @@ namespace rpm4
             tbCSide.Text = tri.c.ToString();
         }
 
+        /// <summary>
+        /// кнопка для увеличения сторон на 1
+        /// </summary>
         private void btnPlus_Click(object sender, RoutedEventArgs e)
         {
             tri++;
             OutPut();
         }
 
+        /// <summary>
+        /// кнопка для уменьшения сторон на 1
+        /// </summary>
         private void btnMinus_Click(object sender, RoutedEventArgs e)
         {
             tri--;
             OutPut();
         }
-
+        /// <summary>
+        /// кнопка для расчета площади равностороннего трегольника
+        /// </summary>
         private void btnEquilateral_Click(object sender, RoutedEventArgs e)
         {
             bool f1, f2, f3;
