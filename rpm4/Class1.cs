@@ -198,9 +198,9 @@ namespace rpm4
         {
             if (side <= 0)
             {
-                throw new ArgumentException("Сторона треугольника должна быть больше нуля");
+                MessageBox.Show("Сторона треугольника должна быть больше нуля");
             }
-            base.SetParams(side, side, side);
+            SetParams(side, side, side);
         }
 
         public double side
