@@ -172,7 +172,7 @@ namespace rpm4
             tri._a -= 1;
             tri._b -= 1;
             tri._c -= 1;
-            return tri;
+           ч
         }
     }
 }
