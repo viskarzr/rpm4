@@ -173,27 +173,48 @@ namespace rpm4
             tri._a -= 1;
             tri._b -= 1;
             tri._c -= 1;
+            if (tri._a == 0 && tri._b == 0 && tri._c == 0)
+            {
+                MessageBox.Show("Стороны не могут быть меньше нуля");
+            }
             return tri;
         }
     }
 
-    class Equilateral:Triangle
+    /// <summary>
+    /// Дочерний класс Equilateral
+    /// </summary>
+    class Equilateral :Triangle
     {
+   
         private double _area;
 
+        /// <summary>
+        /// Свойство класса - площадь
+        /// </summary>
         public double Area
         {
             get {  return _area; }
         }
 
+        /// <summary>
+        /// базовый конструктор
+        /// </summary>
         public Equilateral(): base(1,1,1)
         {
         }
-
+        /// <summary>
+        /// перегруженный конструктор
+        /// </summary>
+        /// <param name="side">сторона треугольника</param>
         public Equilateral(double side) : base(side, side, side)
         {
         }
 
+        /// <summary>
+        /// установка сторон равностороннего треугольника
+        /// </summary>
+        /// <param name="side">сторона равностороннего треугольника</param>
         public void SetParams(double side)
         {
             if (side <= 0)
@@ -213,6 +234,10 @@ namespace rpm4
                 SetParams(value);
             }
         }
+        /// <summary>
+        /// метод для расчета площади равностороннего треугольника
+        /// </summary>
+        /// <returns> площадь треугольника </returns>
         public double CalcArea()
         {
             double p;
