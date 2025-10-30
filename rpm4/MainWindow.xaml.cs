@@ -85,6 +85,10 @@ namespace rpm4
             {
                 tri.SetParams(a, b, c);
             }
+            else
+            {
+                MessageBox.Show("Введите корректные значения!");
+            }
         }
         private void OutPut()
         {
